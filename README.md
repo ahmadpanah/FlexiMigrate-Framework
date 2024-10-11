@@ -1,3 +1,5 @@
+![FlexiMigrate](https://raw.githubusercontent.com/ahmadpanah/FlexiMigrate-Framework/refs/heads/master/logo/fleximigrate.svg?token=GHSAT0AAAAAACTLFHIIKZBR5I5U5Q2XPRO6ZYJPVYA)
+
 # FlexiMigrate Framework
 
 FlexiMigrate is a sophisticated framework designed to facilitate efficient and seamless live container migration across diverse cloud and edge computing environments. It addresses the limitations of existing migration schemes by introducing a modular, orchestrator-agnostic architecture, enhanced state management, adaptive migration strategies, and robust network orchestration.
