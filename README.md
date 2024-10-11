@@ -1,4 +1,4 @@
-![FlexiMigrate](https://raw.githubusercontent.com/ahmadpanah/FlexiMigrate-Framework/refs/heads/master/logo/fleximigrate.svg?token=GHSAT0AAAAAACTLFHIIKZBR5I5U5Q2XPRO6ZYJPVYA)
+![FlexiMigrate](https://raw.githubusercontent.com/ahmadpanah/FlexiMigrate-Framework/refs/heads/master/logo/fleximigrate.svg?token=GHSAT0AAAAAACTLFHIIG2TYWV45MPGKYLHQZYJP4GQ)
 
 # FlexiMigrate Framework
 
