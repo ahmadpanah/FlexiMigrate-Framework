@@ -107,6 +107,53 @@ To run the FlexiMigrate framework, follow these steps:
          flexi_migrate.migration_manager.add_migration_request(migration_request)
      ```
 
+# FlexiMigrate Migration State Machine
+
+The FlexiMigrate framework utilizes a Finite State Machine (FSM) to manage the lifecycle of live container migration requests. This ensures a structured, traceable, and robust process, handling both successful executions and potential failures. The states and transitions are defined in Table 2 and visualized in Figure 4 of the accompanying paper.
+
+This part provides example log snippets demonstrating the state transitions logged by the `Migration Manager` and other interacting components during various migration scenarios. These examples help illustrate the FSM's behavior in practice.
+
+## Log Format
+
+Log entries in the examples generally follow this format:
+
+`LEVEL [ComponentName]: Message - [Optional State Transition Info]`
+
+Where:
+
+*   `LEVEL`: Log severity (e.g., INFO, ERROR, WARN).
+*   `ComponentName`: The FlexiMigrate component logging the message (e.g., MigrationManager, StateSynchronizer, NetworkManager).
+*   `Message`: Description of the event or action.
+*   `[Optional State Transition Info]`: Explicit mentions like `Transitioning: STATE_A -> STATE_B` or `Final State: STATE_C` are included to highlight FSM changes.
+
+---
+
+## Migration Log Scenarios
+
+
+
+### Scenario 1: Successful Live Migration [Link](https://github.com/ahmadpanah/FlexiMigrate-Framework/blob/master/Migration-State-Machine-Log-Examples/Successful-Live-Migration.log).
+
+**Explanation:** This demonstrates the ideal workflow where a migration request is received, planned, prepared, executed, verified, and completed without errors. This follows the path 1N -> 2N -> 3N -> 4N -> 5N -> 6N in Figure 4.
+
+
+### Scenario 2: Failure During Preparation [Link](https://github.com/ahmadpanah/FlexiMigrate-Framework/blob/master/Migration-State-Machine-Log-Examples/Migration-Fails-during-Preparation.log).
+
+**Explanation:** The migration proceeds past planning, but an error occurs during the preparation phase (e.g., network configuration fails). The FSM transitions to FAILED (Path: 1N -> 2N -> 3F), and rollback procedures are initiated.
+
+### Scenario 3: Failure During Execution (State Transfer) [Link](https://github.com/ahmadpanah/FlexiMigrate-Framework/blob/master/Migration-State-Machine-Log-Examples/Migration-Fails-during-Execution.log).
+
+**Explanation:** Preparation completes, but an error occurs during the actual state transfer (e.g., network corruption). The FSM transitions to FAILED (Path: 1N -> 2N -> 3N -> 4F), triggering rollback.
+
+### Scenario 4: Failure During Planning (Policy Violation) [Link](https://github.com/ahmadpanah/FlexiMigrate-Framework/blob/master/Migration-State-Machine-Log-Examples/Migration-Fails-during-Planning.log).
+
+**Explanation:** The migration request is received but is immediately blocked during the planning phase because it violates a predefined migration policy. The FSM transitions directly to FAILED (Path: 1N -> 2F). No technical preparation or execution occurs.
+
+### Scenario 5: Failure During Verification [Link](https://github.com/ahmadpanah/FlexiMigrate-Framework/blob/master/Migration-State-Machine-Log-Examples/Migration-Fails-during-Verification.log).
+
+**Explanation:** The container state is successfully transferred and restored on the destination, but post-migration checks fail (e.g., the container is unresponsive, health checks fail, or network connectivity to dependencies is impaired). The FSM transitions to FAILED (Path: 1N -> 2N -> 3N -> 4N -> 5F), triggering rollback to revert the container to the source host.
+
+
 
 ## Contributing
 
