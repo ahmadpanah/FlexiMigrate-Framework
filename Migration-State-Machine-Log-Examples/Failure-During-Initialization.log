@@ -1,0 +1,6 @@
+INFO [MigrationManager]: Received migration request 'req-jkl-456' for container 'db-critical-007' from 'central-db-host' to 'edge-node-15'. Initial State: PENDING.
+ERROR [MigrationManager]: Initial validation failed for migration request 'req-jkl-456'. Reason: Specified source host 'central-db-host' is currently marked as offline or unreachable for validation checks. Cannot proceed with planning.
+ERROR [MigrationManager]: Initialization phase failed for 'req-jkl-456'. Critical validation error encountered. Transitioning: PENDING -> FAILED.
+INFO [MigrationManager]: Initiating rollback procedures for failed migration 'req-jkl-456'. State: FAILED -> ROLLBACK.
+INFO [MigrationManager]: Minimal rollback required for initialization failure. No container state, network configurations, or resource reservations were made for 'req-jkl-456'. Cleaning up internal request state.
+INFO [MigrationManager]: Rollback attempt finished for 'req-jkl-456'. Migration failed during initialization. Final State: FAILED.
