@@ -4,7 +4,7 @@ FlexiMigrate is a sophisticated framework designed to facilitate efficient and s
 
 ## Overview
 
-This implementation closely follows the architecture and design principles outlined in the research paper "Enhancing Cloud and Edge Computing with FlexiMigrate: A Seamless Approach to Live Container Migration," ensuring fidelity to the proposed structure and functionalities.
+This implementation closely follows the architecture and design principles outlined in the research paper "FlexiMigrate: Enhancing Live Container Migration in Heterogeneous Computing Environments" ensuring fidelity to the proposed structure and functionalities.
 
 ## Component Architecture
 
@@ -109,7 +109,7 @@ To run the FlexiMigrate framework, follow these steps:
 
 # FlexiMigrate Migration State Machine
 
-The FlexiMigrate framework utilizes a Finite State Machine (FSM) to manage the lifecycle of live container migration requests. This ensures a structured, traceable, and robust process, handling both successful executions and potential failures. The states and transitions are defined in Table 2 and visualized in Figure 4 of the accompanying paper.
+The FlexiMigrate framework utilizes a Finite State Machine (FSM) to manage the lifecycle of live container migration requests. This ensures a structured, traceable, and robust process, handling both successful executions and potential failures. The states and transitions are defined in Table 2 and visualized in Figure 4 of the reference paper.
 
 This part provides example log snippets demonstrating the state transitions logged by the `Migration Manager` and other interacting components during various migration scenarios. These examples help illustrate the FSM's behavior in practice.
 
@@ -163,3 +163,12 @@ Contributions to the FlexiMigrate framework are welcome. Please feel free to sub
 
 This project is licensed under the MIT License.
 
+## Cite
+```bash
+@article{ahmadpanahfleximigrate24,
+  title={FlexiMigrate: Enhancing Live Container Migration in Heterogeneous Computing Environments},
+  author={Seyed Hossein Ahmadpanah and Meghdad Mirabi and Amir Sahafi and Seyed Hossein Erfani},
+  journal={will be available after acceptance},  
+  year={2025} 
+}
+```
