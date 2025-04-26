@@ -1,0 +1,19 @@
+INFO [MigrationManager]: Received migration request for container 'nginx-web-123' from 'edge-host-01' to 'edge-host-07'. Initial State: PENDING.
+INFO [MigrationManager]: Evaluating policies for migration request 'req-abc'.
+INFO [MigrationManager]: Policy check passed. Transitioning: PENDING -> PLANNING.
+INFO [DecisionEngine]: Analyzing workload and resources for 'nginx-web-123'. Optimal strategy: Live Migration.
+INFO [ResourceAllocator]: Allocating resources on destination 'edge-host-07'.
+INFO [MigrationManager]: Migration plan generated for 'req-abc'. Transitioning: PLANNING -> PREPARATION.
+INFO [ContainerManager]: Preparing nested parent container on 'edge-host-07'.
+INFO [NetworkManager]: Configuring SDN rules for migration, new IP assigned: 192.168.10.5. Pre-configuring VXLAN tunnel.
+INFO [StateSynchronizer]: Initiating checkpoint process for 'nginx-web-123'.
+INFO [MigrationManager]: Preparation phase complete for 'req-abc'. Transitioning: PREPARATION -> EXECUTION.
+INFO [StateSynchronizer]: Starting incremental state transfer (Checkpoint ID: chk-xyz-1) for 'nginx-web-123' to 'edge-host-07'.
+INFO [StateSynchronizer]: Delta state transfer complete. Total data transferred: 78 MB.
+INFO [ContainerManager]: Restoring container 'nginx-web-123' state on 'edge-host-07' from checkpoint 'chk-xyz-1'.
+INFO [MigrationManager]: State transfer and restoration complete for 'req-abc'. Transitioning: EXECUTION -> VERIFICATION.
+INFO [ResourceMonitor]: Performing post-migration checks for 'nginx-web-123' on 'edge-host-07'.
+INFO [NetworkManager]: Verifying network connectivity to new IP 192.168.10.5. DNS update propagated.
+INFO [MigrationManager]: Container 'nginx-web-123' functional, network OK. Verification passed for 'req-abc'. Transitioning: VERIFICATION -> COMPLETED.
+INFO [MigrationManager]: Finalizing migration 'req-abc'. Cleaning up source resources on 'edge-host-01'. Updating system state.
+INFO [MigrationManager]: Migration of container 'nginx-web-123' to 'edge-host-07' completed successfully. Final State: COMPLETED.

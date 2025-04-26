@@ -1,0 +1,6 @@
+INFO [MigrationManager]: Received migration request for container 'cache-redis-001' from 'edge-host-04' to 'edge-host-11'. Initial State: PENDING.
+INFO [MigrationManager]: Evaluating policies for migration request 'req-jkl'.
+INFO [PolicyEnforcer]: Checking policy 'critical_service_affinity'.
+WARN [PolicyEnforcer]: Migration request 'req-jkl' violates policy 'critical_service_affinity'. Container 'cache-redis-001' marked critical and cannot be moved during business hours (Current time: 14:30).
+ERROR [MigrationManager]: Planning phase failed for 'req-jkl'. Migration request violates policy 'critical_service_affinity'. Transitioning: PLANNING -> FAILED.
+INFO [MigrationManager]: No actions to roll back as migration did not proceed past planning. Migration request 'req-jkl' rejected. Final State: FAILED.

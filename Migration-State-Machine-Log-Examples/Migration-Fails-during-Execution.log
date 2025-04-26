@@ -1,0 +1,11 @@
+INFO [MigrationManager]: Received migration request for container 'ml-tf-789' from 'edge-host-02' to 'edge-host-09'. Initial State: PENDING.
+# ... (PENDING -> PLANNING -> PREPARATION logs as in Scenario 1) ...
+INFO [MigrationManager]: Preparation phase complete for 'req-ghi'. Transitioning: PREPARATION -> EXECUTION.
+INFO [StateSynchronizer]: Starting incremental state transfer (Checkpoint ID: chk-pqr-1) for 'ml-tf-789' to 'edge-host-09'.
+ERROR [StateSynchronizer]: State transfer failed. Checksum mismatch on received data chunk 5/10. Network corruption suspected.
+ERROR [MigrationManager]: Execution phase failed for 'req-ghi' during state transfer. Transitioning: EXECUTION -> FAILED.
+INFO [MigrationManager]: Initiating rollback procedures for failed migration 'req-ghi'. State: FAILED -> ROLLBACK.
+INFO [ContainerManager]: Ensuring container 'ml-tf-789' remains operational on source 'edge-host-02'. Aborting destination restore.
+INFO [NetworkManager]: Reverting network configurations made for 'req-ghi'.
+INFO [StateSynchronizer]: Discarding partial state data on 'edge-host-09'.
+INFO [MigrationManager]: Rollback attempt finished for 'req-ghi'. Migration failed. Final State: FAILED.

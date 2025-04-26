@@ -1,0 +1,13 @@
+INFO [MigrationManager]: Received migration request for container 'db-pg-456' from 'edge-host-03' to 'edge-host-05'. Initial State: PENDING.
+INFO [MigrationManager]: Evaluating policies for migration request 'req-def'.
+INFO [MigrationManager]: Policy check passed. Transitioning: PENDING -> PLANNING.
+INFO [DecisionEngine]: Analyzing workload and resources for 'db-pg-456'. Optimal strategy: Live Migration.
+INFO [ResourceAllocator]: Allocating resources on destination 'edge-host-05'.
+INFO [MigrationManager]: Migration plan generated for 'req-def'. Transitioning: PLANNING -> PREPARATION.
+INFO [ContainerManager]: Preparing nested parent container on 'edge-host-05'.
+ERROR [NetworkManager]: Failed to apply SDN flow rules to switch 'sw-core-1'. Reason: Timeout communicating with controller.
+ERROR [MigrationManager]: Preparation phase failed for 'req-def' due to NetworkManager error. Transitioning: PREPARATION -> FAILED.
+INFO [MigrationManager]: Initiating rollback procedures for failed migration 'req-def'. State: FAILED -> ROLLBACK.
+INFO [ContainerManager]: Cleaning up partially prepared resources on 'edge-host-05'.
+INFO [NetworkManager]: Reverting any applied network changes for 'req-def'.
+INFO [MigrationManager]: Rollback attempt finished for 'req-def'. Migration failed. Final State: FAILED.

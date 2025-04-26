@@ -1,0 +1,11 @@
+INFO [MigrationManager]: Received migration request for container 'api-gateway-003' from 'edge-host-06' to 'edge-host-12'. Initial State: PENDING.
+INFO [MigrationManager]: State transfer and restoration complete for 'req-pqs'. Transitioning: EXECUTION -> VERIFICATION.
+INFO [ResourceMonitor]: Performing post-migration checks for 'api-gateway-003' on 'edge-host-12'. Pinging container health endpoint...
+WARN [ResourceMonitor]: Container 'api-gateway-003' health endpoint check failed (Status Code: 503 Service Unavailable) after 3 attempts.
+ERROR [NetworkManager]: Network path validation to dependent service 'auth-service' from new location failed. Latency > 500ms.
+ERROR [MigrationManager]: Verification phase failed for 'req-pqs'. Container unresponsive or network checks failed post-migration. Transitioning: VERIFICATION -> FAILED.
+INFO [MigrationManager]: Initiating rollback procedures for failed migration 'req-pqs'. State: FAILED -> ROLLBACK.
+INFO [ContainerManager]: Halting container 'api-gateway-003' on destination 'edge-host-12' and attempting to restore/reactivate on source 'edge-host-06'.
+INFO [StateSynchronizer]: Restoring previous checkpoint 'chk-uvw-0' on source 'edge-host-06'.
+INFO [NetworkManager]: Reverting SDN rules and DNS changes associated with 'req-pqs'.
+INFO [MigrationManager]: Rollback attempt finished for 'req-pqs'. Service restored on source. Migration failed. Final State: FAILED.
