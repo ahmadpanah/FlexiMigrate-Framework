@@ -114,5 +114,5 @@ Contributions to the FlexiMigrate framework are welcome. Please feel free to sub
 
 ## License
 
-FlexiMigrate is released under the [MIT License](https://github.com/eli64s/readme-ai/blob/main/LICENSE).
+This project is licensed under the MIT License.
 
