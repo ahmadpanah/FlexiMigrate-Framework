@@ -172,7 +172,10 @@ This project is licensed under the MIT License.
 @article{ahmadpanahfleximigrate24,
   title={FlexiMigrate: Enhancing Live Container Migration in Heterogeneous Computing Environments},
   author={Seyed Hossein Ahmadpanah and Meghdad Mirabi and Amir Sahafi and Seyed Hossein Erfani},
-  journal={will be available after acceptance},  
+  journal={Cluster Computing},  
   year={2025} 
 }
+
+The article is in the reviewing process and will be available after publication.
+
 ```
