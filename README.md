@@ -142,20 +142,20 @@ Where:
 
 ### Scenario 3: Failure in Planning State [Link](https://github.com/ahmadpanah/FlexiMigrate-Framework/blob/master/Migration-State-Machine-Log-Examples/Migration-Fails-during-Planning.log).
 
-**Explanation:** The migration request is received but is immediately blocked during the planning phase because it violates a predefined migration policy. The FSM transitions directly to FAILED (Path: 1N -> 2F). No technical preparation or execution occurs.
+**Explanation:** The migration request is received but is immediately blocked during the planning phase because it violates a predefined migration policy. The FSM transitions directly to FAILED (Path: 1N -> 2F -> 8N). No technical preparation or execution occurs.
 
 ### Scenario 4: Failure in Preparation State [Link](https://github.com/ahmadpanah/FlexiMigrate-Framework/blob/master/Migration-State-Machine-Log-Examples/Migration-Fails-during-Preparation.log).
 
-**Explanation:** The migration proceeds past planning, but an error occurs during the preparation phase (e.g., network configuration fails). The FSM transitions to FAILED (Path: 1N -> 2N -> 3F), and rollback procedures are initiated.
+**Explanation:** The migration proceeds past planning, but an error occurs during the preparation phase (e.g., network configuration fails). The FSM transitions to FAILED (Path: 1N -> 2N -> 3F -> 8N), and rollback procedures are initiated.
 
 ### Scenario 5: Failure in Execution State [Link](https://github.com/ahmadpanah/FlexiMigrate-Framework/blob/master/Migration-State-Machine-Log-Examples/Migration-Fails-during-Execution.log).
 
-**Explanation:** Preparation completes, but an error occurs during the actual state transfer (e.g., network corruption). The FSM transitions to FAILED (Path: 1N -> 2N -> 3N -> 4F), triggering rollback.
+**Explanation:** Preparation completes, but an error occurs during the actual state transfer (e.g., network corruption). The FSM transitions to FAILED (Path: 1N -> 2N -> 3N -> 4F -> 8N), triggering rollback.
 
 
 ### Scenario 6: Failure in Verification State [Link](https://github.com/ahmadpanah/FlexiMigrate-Framework/blob/master/Migration-State-Machine-Log-Examples/Migration-Fails-during-Verification.log).
 
-**Explanation:** The container state is successfully transferred and restored on the destination, but post-migration checks fail (e.g., the container is unresponsive, health checks fail, or network connectivity to dependencies is impaired). The FSM transitions to FAILED (Path: 1N -> 2N -> 3N -> 4N -> 5F), triggering rollback to revert the container to the source host.
+**Explanation:** The container state is successfully transferred and restored on the destination, but post-migration checks fail (e.g., the container is unresponsive, health checks fail, or network connectivity to dependencies is impaired). The FSM transitions to FAILED (Path: 1N -> 2N -> 3N -> 4N -> 5F -> 8N), triggering rollback to revert the container to the source host.
 
 
 
