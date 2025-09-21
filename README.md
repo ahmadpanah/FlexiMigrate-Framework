@@ -171,13 +171,22 @@ This project is licensed under the MIT License.
 
 ## Cite
 ```bibtex
-@article{ahmadpanahfleximigrate24,
-  title={FlexiMigrate: Enhancing Live Container Migration in Heterogeneous Computing Environments},
-  author={Seyed Hossein Ahmadpanah and Meghdad Mirabi and Amir Sahafi and Seyed Hossein Erfani},
-  journal={Cluster Computing},
-  year={2025}
+@Article{Ahmadpanah2025,
+author="Ahmadpanah, Seyed Hossein
+and Mirabi, Meghdad
+and Sahafi, Amir
+and Erfani, Seyed Hossein",
+title="FlexiMigrate: enhancing live container migration in heterogeneous computing environments",
+journal="Cluster Computing",
+year="2025",
+month="Sep",
+day="19",
+volume="28",
+number="13",
+pages="847",
+abstract="This paper introduces FlexiMigrate, a novel framework designed to address the challenges of live container migration in heterogeneous computing environments. FlexiMigrate offers solutions to orchestration platform dependency and heterogeneity, migration overhead, network disruptions, and suboptimal migration decision-making. The framework utilizes a nested container architecture that decouples application containers from orchestration platforms, ensuring cross-platform compatibility. It also incorporates an advanced checkpointing technique to reduce migration overhead, Software-Defined Networking (SDN) integration to maintain continuous connectivity during migration, and a machine learning (ML)-based decision engine to optimize the migration process. These features enhance migration efficiency, improve resource utilization, and minimize service downtime. Experimental results show that FlexiMigrate introduces only a minor overhead compared to standard deployment while reducing total migration time by up to 46.2{\%}, downtime by up to 78.8{\%}, network overhead by up to 50{\%}, average CPU utilization by up to 27.1{\%}, and peak memory consumption by up to 22.4{\%}. These findings validate FlexiMigrate's effectiveness in addressing container migration challenges in cloud and edge environments, offering a robust solution for real-world applications.",
+issn="1573-7543",
+doi="10.1007/s10586-025-05548-x",
+url="https://doi.org/10.1007/s10586-025-05548-x"
 }
-```
-
-The article is in the reviewing process and will be available after publication.
 ```
