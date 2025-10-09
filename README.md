@@ -169,7 +169,7 @@ Contributions to the FlexiMigrate framework are welcome. Please feel free to sub
 
 This project is licensed under the MIT License.
 
-## Cite
+## Publication
 ```bibtex
 @Article{Ahmadpanah2025,
 author="Ahmadpanah, Seyed Hossein
