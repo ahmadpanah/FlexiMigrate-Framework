@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta:__legacy__"
+
+[project]
+name = "fleximigrate"
+version = "1.0.0"
+description = "FlexiMigrate: Enhancing Live Container Migration in Heterogeneous Computing Environments"
+readme = "README.md"
+authors = [
+    { name = "Seyed Hossein Ahmadpanah" },
+]
+license = { text = "MIT" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: System :: Distributed Computing",
+    "Topic :: System :: Networking",
+]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "black>=22.0",
+    "isort>=5.0",
+    "mypy>=0.990",
+]
+sdn = ["os-ken>=2.0"]
+monitoring = ["prometheus_client>=0.16"]
+ml = ["numpy>=1.21", "scikit-learn>=1.0"]
+
+[project.scripts]
+fleximigrate = "fleximigrate.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["fleximigrate*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+[tool.black]
+line-length = 100
+target-version = ["py38", "py39", "py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
